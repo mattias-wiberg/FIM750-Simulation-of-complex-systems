@@ -4,7 +4,7 @@ import imagesc as imagesc
 import time
 
 # Predefined rules
-# cellular automata that evolve towardshomogeneity (class 1),
+# cellular automata that evolve towards homogeneity (class 1),
 # that evolve towards an oscillating or periodic condition (class 2),
 # that display chaotic behaviors (class 3),
 # and that display complex emergent behaviors (class 4).
@@ -12,6 +12,12 @@ rule_90 = [0, 1, 0, 1, 1, 0, 1, 0]  # class-4
 rule_30 = [0, 1, 1, 1, 1, 0, 0, 0]  # class-3
 rule_110 = [0, 1, 1, 1, 0, 1, 1, 0]  # class-4/3
 rule_184 = [0, 0, 0, 1, 1, 1, 0, 1]  # class-2
+
+#My rules
+rule_94 = [0, 1, 0, 1, 1, 1, 1, 0] # class-2
+rule_88 = [0, 1, 0, 1, 1, 0, 0, 0] # class-4
+rule_255 = [1, 1, 1, 1, 1, 1, 1, 1] # class-1
+rule_165 = [1, 0, 1, 0, 0, 1, 0, 1] # class-3
 
 
 def get_next_value(rule, state):
@@ -34,7 +40,7 @@ def get_next_generation(rule, generation):
 
 
 # Rule 90/30
-# generation = [0] * 30 + [1] + [0] * 30
+#generation = [0] * 30 + [1] + [0] * 30
 # Rule 110/184
 generation = np.random.randint(0, 2, size=(61)).tolist()
 n_generations = 32
@@ -42,6 +48,6 @@ generations = []
 
 for i in range(n_generations):
     generations.append(generation)
-    generation = get_next_generation(rule_110, generation)
+    generation = get_next_generation(rule, generation)
 
 imagesc.plot(np.array(generations))
