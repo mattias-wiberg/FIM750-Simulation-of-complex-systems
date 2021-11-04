@@ -42,8 +42,23 @@ def get_alive_neighbors(world, cell):
             alive_neighbors.append(neighboor)
     return alive_neighbors
 
-def populate(world):
-    pass
+def populate(world, population=[]):
+    height = len(world[0,:])
+    width = len(world[:,0])
+
+    if population == []:
+        world = np.random.randint(0, 2, size=(height, width))
+    else:
+        population = np.array(population)
+        w_pop = len(population[:,0])
+        h_pop = len(population[0,:])
+        x = round((width-w_pop)/2)
+        y = round((height-h_pop)/2)
+        world[y:y+h_pop, x:x+w_pop] = population
+
+def next_generation(world, rule):
+    
+    ...
 
 def get_world(width, height):
     return np.zeros([height, width])
@@ -51,8 +66,11 @@ def get_world(width, height):
 width = 10
 height = 10
 world = get_world(width, height)
-get_neighbors(world, (0,0))
-get_neighbors(world, (9,9), True)
+get_neighbors(world, (0,0), True)
+populate(world, [[1,1],[1,1]])
+# Birth criteria, survive criteria
+rule = ([3], [2,3])
+#get_neighbors(world, (9,9), True)
 # 8,8 9,8 0,8
 # 8,9 9,9 0,9
 # 8,0 9,0 0,0
