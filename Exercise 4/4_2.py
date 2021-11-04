@@ -27,9 +27,9 @@ def get_neighbors(world, cell, periodic=False):
                     if not (in_x_upperbound or in_y_upperbound):
                         neighbors.append((0,0))
                     elif not in_x_upperbound:
-                        neighbors.append((neighbor_x, 0))
+                        neighbors.append((0, neighbor_y))
                     elif not in_y_upperbound:
-                        neighbors.append((0,neighbor_y))
+                        neighbors.append((neighbor_x,0))
                     else:
                         neighbors.append((neighbor_x, neighbor_y))
                     
@@ -53,3 +53,6 @@ height = 10
 world = get_world(width, height)
 get_neighbors(world, (0,0))
 get_neighbors(world, (9,9), True)
+# 8,8 9,8 0,8
+# 8,9 9,9 0,9
+# 8,0 9,0 0,0
