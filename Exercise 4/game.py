@@ -4,24 +4,27 @@ import imagesc as imagesc
 
 class Game:
     # @param rule Birth criteria, survive criteria in number of alive neighbors
-    def __init__(self, width=10, height=10, rule=([3], [2, 3]), periodic=False):
+    def __init__(
+        self, width=10, height=10, population=[], rule=([3], [2, 3]), periodic=False
+    ):
         self.width = width
         self.height = height
-
+        self.periodic = periodic
         self.rule = rule
+
         self.birth_crit = self.rule[0]
         self.survive_crit = self.rule[1]
-
-        self.world = np.zeros([height, width])
-        self.world_history = [self.world.copy()]
-        self.periodic = periodic
+        self.population_history = []
+        self.world_history = []
 
         # Origin, population array
-        self.population_history = []
         self.cells = []
         for y in range(height):
             for x in range(width):
                 self.cells.append((y, x))
+
+        self.world = np.zeros([height, width])
+        self.populate(population)
 
     # 4.6
     def get_population(self):
@@ -107,6 +110,7 @@ class Game:
             y = round((self.height - h_pop) / 2)
             self.world[y : y + h_pop, x : x + w_pop] = population
 
+        self.world_history.append(self.world)
         self.population_history.append(self.get_population())
         # print(self.population_history[-1][0])
         # print(self.population_history[-1][1])
@@ -123,10 +127,14 @@ class Game:
                     next_world[cell] = 1
 
         self.world = next_world
-        self.world_history.append(next_world)
+        self.world_history.append(self.world)
         self.population_history.append(self.get_population())
         # print(self.get_population()[0])
         # print(self.get_population()[1])
+
+    def still_life(self):
+        if len(self.population_history) > 1:
+            pass
 
     def show(self, title="Game"):
         self.board = imagesc.plot(
