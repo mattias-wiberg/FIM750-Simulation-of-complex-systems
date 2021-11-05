@@ -9,8 +9,8 @@ still_life = [block, beehive, loaf, boat, tub]
 
 game = Game()
 for pop in still_life:
-    game.wipe_world()
-    game.world.populate(pop)
+    game.populate(pop)
     game.show()
     game.next_generation()
     game.show()
+    game.wipe_world()

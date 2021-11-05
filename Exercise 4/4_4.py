@@ -7,9 +7,10 @@ oscillators = [blinker, toad, beacon]
 
 game = Game()
 for pop in oscillators:
-    game.wipe_world()
-    game.world.populate(pop)
+    game.populate(pop)
     game.show()
     for i in range(2):
         game.next_generation()
         game.show()
+
+    game.wipe_world()

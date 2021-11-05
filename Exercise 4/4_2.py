@@ -18,7 +18,7 @@ game = Game()
 # %% Still life plotting
 for pop in still_life:
     game.wipe_world()
-    game.world.populate(pop)
+    game.populate(pop)
     game.show()
     game.next_generation()
     game.show()
@@ -26,7 +26,7 @@ for pop in still_life:
 # %% Osillators plotting
 for pop in oscillators:
     game.wipe_world()
-    game.world.populate(pop)
+    game.populate(pop)
     game.show()
     for i in range(3):
         game.next_generation()
