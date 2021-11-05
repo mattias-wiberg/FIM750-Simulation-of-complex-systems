@@ -26,6 +26,9 @@ class Game:
         self.world = np.zeros([height, width])
         if population != []:
             self.populate(population)
+        else:
+            self.population_history.append(self.get_population())
+            self.world_history.append(self.world)
 
     # 4.6
     def get_population(self):
@@ -96,14 +99,14 @@ class Game:
         self.world_history.append(self.world.copy())
 
     def wipe_history(self):
-        population = self.get_population()
-        self.population_history = [population]
+        self.population_history = [self.get_population()]
         self.world_history = [self.world.copy()]
 
     def populate(self, population=[]):
         if population == []:
             self.world = np.random.randint(0, 2, size=(self.height, self.width))
         else:
+            self.world = np.zeros([self.height, self.width])
             population = np.array(population)
             h_pop = population.shape[0]
             w_pop = population.shape[1]
@@ -133,9 +136,35 @@ class Game:
         # print(self.get_population()[0])
         # print(self.get_population()[1])
 
-    def still_life(self):
+    def still_life(self) -> bool:
+        if self.extinct():
+            return True
+
         if len(self.population_history) > 1:
-            pass
+            population = self.population_history[-1][1]
+            last_population = self.population_history[-2][1]
+            return self.equal_pop(population, last_population)
+        else:
+            return False
+
+    def equal_pop(self, pop1, pop2) -> bool:
+        if pop1.shape == pop2.shape:
+            return (pop1 == pop2).all()
+        else:
+            return False
+
+    def extinct(self) -> bool:
+        return self.population_history[-1][1].size == 0
+
+    def oscillating(self):
+        if len(self.population_history) < 2:
+            return False
+        # all except current (-1)
+        for i, pop in enumerate(self.population_history[:-1]):
+            if self.equal_pop(pop[1], self.population_history[-1][1]):
+                return True  # , self.population_history[i:-1])
+
+        return False
 
     def show(self, title="Game"):
         self.board = imagesc.plot(
