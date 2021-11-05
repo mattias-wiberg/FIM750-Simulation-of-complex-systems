@@ -37,6 +37,8 @@ class Game:
 
         self.world.map = next_map
         self.map_history.append(next_map)
+        print(self.world.get_population()[0])
+        print(self.world.get_population()[1])
 
     def show(self, title="Game"):
         self.board = imagesc.plot(

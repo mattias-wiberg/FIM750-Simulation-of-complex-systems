@@ -7,10 +7,12 @@ class World:
         self.height = height
         self.map = np.zeros([height, width])
         self.periodic = periodic
+        # Origin, population array
+        self.population_history = []
         self.cells = []
         for y in range(height):
             for x in range(width):
-                self.cells.append((x, y))
+                self.cells.append((y, x))
 
     def populate(self, population=[]):
         if population == []:
@@ -23,6 +25,10 @@ class World:
             y = round((self.height - h_pop) / 2)
             self.map[y : y + h_pop, x : x + w_pop] = population
 
+        self.population_history.append([(x, y), population])
+        print(self.population_history[-1][0])
+        print(self.population_history[-1][1])
+
     # 4.6
     def get_population(self):
         # bounding min, max values
@@ -31,8 +37,8 @@ class World:
 
         for cell in self.cells:
             if self.map[cell]:  # alive
-                x = cell[0]
-                y = cell[1]
+                y = cell[0]
+                x = cell[1]
                 xbound[0] = x if x < xbound[0] else xbound[0]
                 xbound[1] = x if x > xbound[1] else xbound[1]
                 ybound[0] = y if y < ybound[0] else ybound[0]
