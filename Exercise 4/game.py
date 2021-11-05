@@ -24,7 +24,8 @@ class Game:
                 self.cells.append((y, x))
 
         self.world = np.zeros([height, width])
-        self.populate(population)
+        if population != []:
+            self.populate(population)
 
     # 4.6
     def get_population(self):
