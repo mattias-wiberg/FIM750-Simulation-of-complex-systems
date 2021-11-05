@@ -1,5 +1,6 @@
 from world import World
 import numpy as np
+import imagesc as imagesc
 
 class Game:
     #@param rule Birth criteria, survive criteria in number of alive neighbors
@@ -18,15 +19,21 @@ class Game:
         self.history = [self.world.map.copy()]
 
     def next_generation(self):
-        next_map = np.zeros([self.height, self.width])
+        next_map = np.zeros([self.world.height, self.world.width])
         for cell in self.world.cells:
             n_alive_neighbors = len(self.world.get_alive_neighbors(cell))
-            if self.world[cell]: # Alive
+            if self.world.map[cell]: # Alive
                 if n_alive_neighbors not in self.survive_crit:
                     next_map[cell] = 0
             else: # Dead
                 if n_alive_neighbors in self.birth_crit:
                     next_map[cell] = 1
+        
+        self.world.map = next_map
+        self.history.append(next_map)
+    
+    def show(self):
+        imagesc.plot(self.world.map,grid=True,linewidth=2)
 
 
 

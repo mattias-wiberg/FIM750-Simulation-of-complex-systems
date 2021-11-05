@@ -1,10 +1,11 @@
 import numpy as np
 
 class World:
-    def __init__(self, width, height):
+    def __init__(self, width, height, periodic = False):
         self.width = width
         self.height = height
         self.map = np.zeros([height, width])
+        self.periodic = periodic
         self.cells = []
         for x in range(width):
             for y in range(height):
@@ -21,7 +22,7 @@ class World:
             y = round((self.height-h_pop)/2)
             self.map[y:y+h_pop, x:x+w_pop] = population
 
-    def get_neighbors(self, cell, periodic=False):
+    def get_neighbors(self, cell):
         neighbors = []
         x = cell[0]
         y = cell[1]
@@ -36,7 +37,7 @@ class World:
                 in_upperbounds = in_x_upperbound and in_y_upperbound
                 is_cell = (neighbor_x,neighbor_y)==cell
 
-                if not periodic:
+                if not self.periodic:
                     positive = neighbor_x >= 0 and neighbor_y >= 0
                     if positive and in_upperbounds and not is_cell:
                         neighbors.append((neighbor_x, neighbor_y))
@@ -55,7 +56,7 @@ class World:
         
     def get_alive_neighbors(self, cell):
         alive_neighbors = []
-        for neighboor in self.get_neighbors(self.world, cell):
-            if self.world[cell]:
+        for neighboor in self.get_neighbors(cell):
+            if self.map[neighboor]:
                 alive_neighbors.append(neighboor)
         return alive_neighbors
