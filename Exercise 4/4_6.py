@@ -1,8 +1,9 @@
 from game import Game
+import numpy as np
 
-
-game = Game()
-game.populate([[1], [1], [1]])
-game.world[-1, -1] = 1
-game.world[0, 0] = 1
-game.get_population()
+N = 3
+game = Game(3 * N, 3 * N)
+config = np.random.randint(0, 2, size=(N, N))
+game.populate(config)
+game.show()
+game.population_history

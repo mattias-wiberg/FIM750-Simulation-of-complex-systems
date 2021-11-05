@@ -83,12 +83,17 @@ class Game:
                 alive_neighbors.append(neighboor)
         return alive_neighbors
 
+    def wipe(self):
+        self.wipe_world()
+        self.wipe_history()
+
     def wipe_world(self):
         self.world = np.zeros([self.height, self.width])
         self.world_history.append(self.world.copy())
 
     def wipe_history(self):
-        self.population_history = []
+        population = self.get_population()
+        self.population_history = [population]
         self.world_history = [self.world.copy()]
 
     def populate(self, population=[]):
@@ -102,9 +107,9 @@ class Game:
             y = round((self.height - h_pop) / 2)
             self.world[y : y + h_pop, x : x + w_pop] = population
 
-        self.population_history.append([(x, y), population])
-        print(self.population_history[-1][0])
-        print(self.population_history[-1][1])
+        self.population_history.append(self.get_population())
+        # print(self.population_history[-1][0])
+        # print(self.population_history[-1][1])
 
     def next_generation(self):
         next_world = self.world.copy()
@@ -119,8 +124,9 @@ class Game:
 
         self.world = next_world
         self.world_history.append(next_world)
-        print(self.get_population()[0])
-        print(self.get_population()[1])
+        self.population_history.append(self.get_population())
+        # print(self.get_population()[0])
+        # print(self.get_population()[1])
 
     def show(self, title="Game"):
         self.board = imagesc.plot(
