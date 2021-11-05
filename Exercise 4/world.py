@@ -23,6 +23,27 @@ class World:
             y = round((self.height - h_pop) / 2)
             self.map[y : y + h_pop, x : x + w_pop] = population
 
+    # 4.6
+    def get_population(self):
+        # bounding min, max values
+        xbound = [self.width, -1]
+        ybound = [self.height, -1]
+
+        for cell in self.cells:
+            if self.map[cell]:  # alive
+                x = cell[0]
+                y = cell[1]
+                xbound[0] = x if x < xbound[0] else xbound[0]
+                xbound[1] = x if x > xbound[1] else xbound[1]
+                ybound[0] = y if y < ybound[0] else ybound[0]
+                ybound[1] = y if y > ybound[1] else ybound[1]
+
+        # Origin, population matrix
+        return [
+            (xbound[0], ybound[0]),
+            self.map[ybound[0] : ybound[1] + 1, xbound[0] : xbound[1] + 1],
+        ]
+
     def get_neighbors(self, cell):
         neighbors = []
         x = cell[0]
