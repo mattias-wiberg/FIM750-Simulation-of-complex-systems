@@ -13,11 +13,11 @@ rule_30 = [0, 1, 1, 1, 1, 0, 0, 0]  # class-3
 rule_110 = [0, 1, 1, 1, 0, 1, 1, 0]  # class-4/3
 rule_184 = [0, 0, 0, 1, 1, 1, 0, 1]  # class-2
 
-#My rules
-rule_94 = [0, 1, 0, 1, 1, 1, 1, 0] # class-2
-rule_88 = [0, 1, 0, 1, 1, 0, 0, 0] # class-4
-rule_255 = [1, 1, 1, 1, 1, 1, 1, 1] # class-1
-rule_165 = [1, 0, 1, 0, 0, 1, 0, 1] # class-3
+# My rules
+rule_94 = [0, 1, 0, 1, 1, 1, 1, 0]  # class-2
+rule_88 = [0, 1, 0, 1, 1, 0, 0, 0]  # class-4
+rule_255 = [1, 1, 1, 1, 1, 1, 1, 1]  # class-1
+rule_165 = [1, 0, 1, 0, 0, 1, 0, 1]  # class-3
 
 
 def get_next_value(rule, state):
@@ -40,7 +40,7 @@ def get_next_generation(rule, generation):
 
 
 # Rule 90/30
-#generation = [0] * 30 + [1] + [0] * 30
+# generation = [0] * 30 + [1] + [0] * 30
 # Rule 110/184
 generation = np.random.randint(0, 2, size=(61)).tolist()
 n_generations = 32
@@ -48,6 +48,8 @@ generations = []
 
 for i in range(n_generations):
     generations.append(generation)
-    generation = get_next_generation(rule, generation)
+    generation = get_next_generation(rule_165, generation)
 
-imagesc.plot(np.array(generations))
+imagesc.plot(
+    np.array(generations), grid=True, linewidth=1, title="Rule 165", cmap="Blues"
+)
