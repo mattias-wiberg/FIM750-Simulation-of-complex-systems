@@ -19,8 +19,11 @@ for i in range(10000):
         # print(game.world_history)
         game.next_generation()
         generation += 1
-        if game.equal_pop(
-            game.population_history[0][1], game.population_history[-1][1]
+        if (
+            game.equal_pop(
+                game.population_history[0][1], game.population_history[-1][1]
+            )
+            and not game.still_life()
         ):
             print("Experiment " + str(i) + ":" + str(generation) + " Generation")
             game.show(

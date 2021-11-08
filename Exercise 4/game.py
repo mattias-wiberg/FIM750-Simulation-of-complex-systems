@@ -166,10 +166,10 @@ class Game:
 
         return False
 
-    def show(self, title="Game"):
+    def show(self, title="Game", grid=True):
         self.board = imagesc.plot(
             self.world,
-            grid=True,
+            grid=grid,
             linewidth=1,
             title=title,
             cmap="Blues",
