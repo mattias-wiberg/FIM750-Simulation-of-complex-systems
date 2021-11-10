@@ -7,7 +7,7 @@ voting_rule = [[5, 6, 7, 8], [4, 5, 6, 7, 8]]
 height = 100
 width = 100
 game = Game(width, height, rule=voting_rule, periodic=True)
-p = 0.4  # Chance of a 1
+p = 0.6  # Chance of a 1
 
 i = 0
 game.populate(np.where(p > np.random.rand(height, width), 1, 0))  # Random
@@ -19,4 +19,5 @@ while not game.still_life():
 
 game.show(title="t = " + str(i), grid=False)
 pop_sum = game.world.sum()
-print("Number of 1s: " + str(pop_sum), ", 0s: " + str((height * width) - pop_sum))
+total = height * width
+print("Number of 1s: " + str(pop_sum) + '('+str(pop_sum/total*100)+'%)', ", 0s: " + str(total - pop_sum) + ' ('+str((1-(pop_sum/total))*100)+'%)')
