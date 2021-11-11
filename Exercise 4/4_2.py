@@ -1,3 +1,5 @@
+import imagesc
+from matplotlib.pyplot import savefig
 from game import Game
 
 # Still life
@@ -31,6 +33,14 @@ for pop in oscillators:
     for i in range(3):
         game.next_generation()
         game.show()
+
+game = Game(periodic=True)
+game.wipe_world()
+game.populate()
+for i in range(20):
+    game.show("t="+str(i))
+    imagesc.savefig(game.board, "./Images/4_2/periodic/t_"+str(i))
+    game.next_generation()
 # get_neighbors(world, (9,9), True)
 # 8,8 9,8 0,8
 # 8,9 9,9 0,9
