@@ -17,6 +17,7 @@ found_oscillations = []
 periods = []
 shifts = []
 velocities = []
+still = 0
 
 for i in range(searches):
     config = np.random.randint(0, 2, size=(N, N))
@@ -54,6 +55,8 @@ for i in range(searches):
                     shifts.append(shift)
                     
             break
+        if game.still_life():
+            still += 1
 #%%
 for i in range(len(found_oscillations)):
     game.wipe_world()

@@ -11,9 +11,9 @@ rule1 = [[2], [3, 4, 5]]
 rule2 = [[5, 6, 7], [2, 3]]
 
 
-# Always dies out (might be trivial since it always requires the same)
+# Always dies out
 rule3 = [[4, 5, 6, 7, 8], [4, 5]]
-game = Game(rule=rule3, periodic=False)
+game = Game(rule=rule1, periodic=True)
 game.populate()  # Random
 i = 0
 while not game.still_life() and not game.oscillating():
@@ -22,3 +22,5 @@ while not game.still_life() and not game.oscillating():
     i += 1
 
 game.show(title="t = " + str(i))
+game.next_generation()
+game.show(title="t = " + str(i+1))
