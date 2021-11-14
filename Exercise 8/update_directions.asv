@@ -1,0 +1,11 @@
+function particles = update_directions(particles, Rf, dt)
+    for j = 1:size(particles)
+        differance = abs(particles(:,1:2) - particles(j, 1:2));
+        differance(differance > L/2) = L - differance(differance > L/2)
+        in_range = sqrt(sum(differance.^2, 2)) < Rf
+        avg = mean(particles(in_range, 3))
+        Wn = randn()
+        particles(j,3) = avg + eta*Wn*dt
+    end
+end
+

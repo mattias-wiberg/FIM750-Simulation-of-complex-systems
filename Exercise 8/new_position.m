@@ -1,18 +1,7 @@
-function [new_x, new_y] = new_position(x, y, L)
-    if x < -L/2
-        new_x = x + L;
-    elseif x > L/2
-        new_x = x - L;
-    else
-        new_x = x;
-    end
-    
-    if y < -L/2
-        new_y = y + L;
-    elseif y > L/2
-        new_y = y - L;
-    else
-        new_y = y;
-    end
+function [x, y] = new_position(x, y, L)
+    x(x < -L/2) = x + L;
+    x(x > L/2) = x - L;
+    y(y < -L/2) = y + L;
+    y(y > L/2) = y - L;
 end
 
