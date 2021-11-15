@@ -5,7 +5,7 @@ clear;
 N = 100;
 L = 100;
 rho = N/L^2; % density rho = N/L^2
-eta = 0.01; % Noise
+eta = 0.1; % Noise
 Rf = 1; % Interaction radius radius
 dt = 1;
 v = 1;
@@ -16,26 +16,45 @@ g_clust = zeros(S, 1);
 
 % Particles
 inital_particles = initilize_particles(N, L, v);
+%% Run
 particles = inital_particles;
-for i = 1:S+1
+j = 1;
+for i = 1:S
     g_align(i) = alignment_coefficient(particles, v);
     g_clust(i) = global_clustering_coeff(particles, Rf);
     particles = update_particles(particles, L, Rf, eta, dt);
+    if any(i == [10 100 500 1000])
+        subplot(1, 4, j)
+        voronoi(particles(:,1), particles(:,2))
+        ylim([-L/2 L/2])
+        xlim([-L/2 L/2])
+        pbaspect([1 1 1])
+        j = j + 1;
+    end
+    
+    if mod(i, 1000)==1
+        disp(i);
+    end
 end
 
 %% Plotting
-[v,c] = voronoin(inital_particles(:,1:2));
-A = get_voronoi_areas(v,c);
-
 clf
 subplot(1,3,1)
 voronoi(inital_particles(:,1), inital_particles(:,2));
+pbaspect([1 1 1])
+ylim([-L/2 L/2])
+xlim([-L/2 L/2])
 subplot(1,3,2)
 voronoi(particles(:,1), particles(:,2))
+pbaspect([1 1 1])
+ylim([-L/2 L/2])
+xlim([-L/2 L/2])
 subplot(1,3,3)
 plot(1:S, g_align);
 hold on
-%plot(1:S, 1:S)
+plot(1:S, g_clust);
+ylim([0 1.1])
 legend('\Psi', 'c')
 xlabel('t')
 ylabel('\Psi, c')
+pbaspect([1 1 1])

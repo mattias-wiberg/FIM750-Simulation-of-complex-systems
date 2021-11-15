@@ -3,4 +3,3 @@ function cn = global_clustering_coeff(particles, Rf)
     A = get_voronoi_areas(v,c);
     cn = sum(A < pi*Rf^2)/size(particles, 1);
 end
-
