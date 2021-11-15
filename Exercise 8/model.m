@@ -21,7 +21,7 @@ particles = inital_particles;
 j = 1;
 for i = 1:S
     g_align(i) = alignment_coefficient(particles, v);
-    g_clust(i) = global_clustering_coeff(particles, Rf);
+    g_clust(i) = global_clustering_coeff(particles, Rf, L);
     particles = update_particles(particles, L, Rf, eta, dt);
     if any(i == [10 100 500 1000])
         subplot(1, 4, j)
@@ -58,3 +58,29 @@ legend('\Psi', 'c')
 xlabel('t')
 ylabel('\Psi, c')
 pbaspect([1 1 1])
+%% Voronoi correct?
+M = [
+    particles(:,1) particles(:,2)
+    particles(:,1)-L particles(:,2)-L
+    particles(:,1)-L particles(:,2)
+    particles(:,1)-L particles(:,2)+L
+    particles(:,1) particles(:,2)-L
+    particles(:,1) particles(:,2)+L
+    particles(:,1)+L particles(:,2)-L
+    particles(:,1)+L particles(:,2)
+    particles(:,1)+L particles(:,2)+L];
+voronoi(M(:,1), M(:,2))
+grid on
+xticks([-L L]./2)
+yticks([-L L]./2)
+[v, c] = voronoin(M(:,1:2));
+total_a = 0;
+for i = 1:100
+    v1 = v(c{i},1);
+    v2 = v(c{i},2);
+    patch(v1, v2, 'C')
+    total_a = total_a + polyarea(v1,v2);
+end
+total_a
+[v, c] = voronoin(particles(:,1:2));
+(total_a-nansum(get_voronoi_areas(v, c)))/total_a
