@@ -5,7 +5,7 @@ clear;
 N = 100;
 L = 100;
 rho = N/L^2; % density rho = N/L^2
-eta = 0; % Noise
+eta = 0.01; % Noise
 Rf = 1; % Interaction radius radius
 dt = 1;
 v = 1;
@@ -41,9 +41,13 @@ end
 clf
 subplot(1,3,1)
 voronoi(inital_particles(:,1), inital_particles(:,2));
+ylim([-L/2 L/2])
+xlim([-L/2 L/2])
 pbaspect([1 1 1])
 subplot(1,3,2)
 voronoi(particles(:,1), particles(:,2))
+ylim([-L/2 L/2])
+xlim([-L/2 L/2])
 pbaspect([1 1 1])
 subplot(1,3,3)
 plot(1:S, g_align);
