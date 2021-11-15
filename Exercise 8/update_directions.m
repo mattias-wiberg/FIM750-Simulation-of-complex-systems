@@ -10,8 +10,9 @@ function directions = update_directions(particles, L, Rf, eta, dt)
         in_range = sqrt(sum(differance.^2, 2)) < Rf;
         % Circular mean https://en.wikipedia.org/wiki/Circular_mean
         avg = atan2(sum(sin(particles(in_range, 3))), sum(cos(particles(in_range, 3))));
-        Wn = randn();
+        Wn = rand()-0.5;
         directions(j) = avg + eta*Wn*dt;
     end
+    
 end
 
