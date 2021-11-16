@@ -28,9 +28,14 @@ for i = 1:S
         voronoi(particles(:,1), particles(:,2))
         ylim([-L/2 L/2])
         xlim([-L/2 L/2])
-        pbaspect([1 1 1])
         j = j + 1;
     end
+    
+    %Animation
+    %scatter(particles(:,1), particles(:,2), 'filled')
+    %ylim([-L/2 L/2])
+    %xlim([-L/2 L/2])
+    %pause(0.001)
     
     if mod(i, 1000)==1
         fprintf("%d\n",i);
