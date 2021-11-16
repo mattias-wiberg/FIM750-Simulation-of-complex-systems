@@ -17,9 +17,11 @@ g_clust = zeros(S, 1);
 % Particles
 inital_particles = initilize_particles(N, L, v);
 %% Run
+history = zeros(N, 4, S);
 particles = inital_particles;
 j = 1;
 for i = 1:S
+    %history(:,:,i) = particles;
     g_align(i) = alignment_coefficient(particles, v);
     g_clust(i) = global_clustering_coeff(particles, Rf, L);
     particles = update_particles(particles, L, Rf, eta, dt);
@@ -28,6 +30,7 @@ for i = 1:S
         voronoi(particles(:,1), particles(:,2))
         ylim([-L/2 L/2])
         xlim([-L/2 L/2])
+        pbaspect([1 1 1])
         j = j + 1;
     end
     
