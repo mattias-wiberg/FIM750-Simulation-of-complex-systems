@@ -44,7 +44,7 @@ for i = 1:S
         fprintf("%d\n",i);
     end
 end
-
+%saveas(gcf, strcat('./Images/7/rf_',int2str(Rf),'_steps.png'))
 %% Plotting
 clf
 subplot(1,3,1)
@@ -66,3 +66,4 @@ legend('\Psi', 'c', 'Location', 'southeast')
 xlabel('t')
 ylabel('\Psi, c')
 pbaspect([1 1 1])
+%saveas(gcf, strcat('./Images/7/rf_',int2str(Rf),'.png'))
