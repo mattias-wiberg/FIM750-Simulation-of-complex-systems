@@ -5,7 +5,7 @@ function new_world = diffusion(world, L, d)
         agents = world{y(i),x(i)};
         for agent = agents
             if rand < d
-                move = randi(4); % 1=up, 2=right, 3=down, 4=left
+                move = randi(4);
                 switch(move)
                     case 1 % UP
                         if y(i) + 1 > L
