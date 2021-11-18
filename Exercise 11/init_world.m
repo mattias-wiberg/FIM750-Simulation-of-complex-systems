@@ -6,7 +6,7 @@ function world = init_world(L, N, ifr)
     for i = 1:N
         x = randi(L);
         y = randi(L);
-        world{x, y} = [world{x, y} population(i)];
+        world{y, x} = [world{y, x} population(i)];
     end
 end
 
