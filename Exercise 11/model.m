@@ -10,8 +10,9 @@ L = 3; % Lattice size
 
 % S = 1, I = 2, R = 3
 world = init_world(L, N, ifr);
-for i = 1:10
+while ~isempty(find(cellfun(@(x) any(x==2), world), 1))
     world = diffusion(world, L, d);
     world = infect(world, beta);
     world = recover(world, beta);
 end
+world
