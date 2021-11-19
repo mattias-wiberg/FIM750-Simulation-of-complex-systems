@@ -16,14 +16,15 @@ for beta = linspace(0, 1, 40)
     S = [];
     I = [];
     R = [];
-    while ~isempty(find(cellfun(@(x) any(x==2), world), 1))
+    while any_infected(world)
         world = diffusion(world, L, d);
         world = infect(world, beta);
         world = recover(world, gamma);
         t = t + 1
-        %S = [S sum(cellfun(@(x) sum(x==1), world), 'all')];
-        %I = [I sum(cellfun(@(x) sum(x==2), world), 'all')];
-        %R = [R sum(cellfun(@(x) sum(x==3), world), 'all')];
+        [nS, nI, nR] = get_SIR(world);
+        S = [S nS];
+        I = [I nI];
+        R = [R nR];
         %show_world(world);
         %title(strcat('t = ', int2str(t)))
         %pause(0.01)
