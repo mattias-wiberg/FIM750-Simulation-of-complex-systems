@@ -1,13 +1,14 @@
 function world = recover(world, gamma)
-    infected_cells = find(cellfun(@(x) any(x==2),world) & ~cellfun(@isempty,world));
-    for i = 1:length(infected_cells)
-        agents = world{infected_cells(i)};
-        for j = 1:length(agents)
-            if agents(j) == 2 && rand < gamma
-                agents(j) = 3; % Infected to recovered
+    for i = 1:numel(world)
+        if any(world{i} == 2) % Contains any infected
+            agents = world{i};
+            for j = 1:length(agents)
+                if agents(j) == 2 && rand < gamma
+                    agents(j) = 3; % Infected to recovered
+                end
             end
+            world{i} = agents;
         end
-        world{infected_cells(i)} = agents;
     end
 end
 
