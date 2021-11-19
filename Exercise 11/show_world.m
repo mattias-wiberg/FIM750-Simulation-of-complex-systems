@@ -1,7 +1,11 @@
 function fig = show_world(world)
-    scatter = cellfun(@mode, world); % Most occurences
-    %scatter = cellfun(@mean, world); % Mean of cell agent types
-    scatter(isnan(scatter)) = 0;
+    scatter = zeros(size(world));
+    for i = 1:numel(world)
+        if ~isnan(world{i})
+            scatter(i) = mode(world{i});
+        end
+    end
+    
     map = [
         1 1 1
         0 0 1
