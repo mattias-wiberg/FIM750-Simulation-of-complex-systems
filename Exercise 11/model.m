@@ -30,6 +30,7 @@ for k = linspace(2, 80, steps) %beta/gamma
         i = i + 1;
     end
 end
+save('SIRt.mat', 'SIRt')
 %%
 clf;
 

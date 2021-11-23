@@ -1,4 +1,4 @@
-function new_world = diffusion(world, L, d)
+function new_world = diffuse(world, L, d)
     new_world = cell(L);
     for y = 1:L
         for x = 1:L

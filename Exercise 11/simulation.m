@@ -5,7 +5,7 @@ function [S, I, R, t] = simulation(L, N, ifr, d, beta, gamma, mu, alpha)
     R = [];
     world = init_world(L, N, ifr);
     while any_infected(world)
-        world = diffusion(world, L, d);
+        world = diffuse(world, L, d);
         world = infect(world, beta);
         world = recover(world, gamma);
         %world = eliminate(world, mu); % Exercise 3
