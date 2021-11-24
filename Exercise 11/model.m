@@ -12,8 +12,8 @@ L = 100; % Lattice size
 alpha = 0.01;
 
 % S = 1, I = 2, R = 3
-averages = 3;
-steps = 40;
+averages = 1;
+steps = 20;
 vars = 6;
 SIRt = zeros(steps, vars, averages);
 i = 1;
