@@ -2,10 +2,10 @@ clc;
 clf;
 clear;
 N = 1000;
-beta = 0.6;
-gamma = 0.01;
+beta = 1;
+gamma = 0.00001;
 ifr = 0.01; % Init infection rate
-mu = 0.01;
+mu = 0.003;
 k = beta/gamma;
 d = 0.8; % Diffusion rate
 L = 100; % Lattice size
