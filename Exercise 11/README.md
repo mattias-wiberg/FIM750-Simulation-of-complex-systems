@@ -25,3 +25,4 @@ When plotting the D_&inf; as a function of &mu; using &beta; = 0.6 and &gamma; =
 This shows that low &mu; are the most dangerous. Using the parameters &beta; = 1, &gamma; = 0.0001 &mu; = 0.003 then D_&inf; = 971 (97.1% of N) after 3 averages.
 
 ## Exercise 4
+When %gamma;~>0.03 the disease usually become endemic.
