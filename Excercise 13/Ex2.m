@@ -8,8 +8,14 @@ S = 1.5;
 R = 0.82;
 L = 3;
 mu = 0;
-game = Game(N,T,R,P,S,L);
-game.populate([0,N]);
-game.competition()
-game.world
-game.years
+model = Model(N,T,R,P,S,L);
+model.populate([0,N]);
+model.strats = [
+    0 0 0
+    0 N 0
+    0 0 0];
+model.strats
+model.competition()
+model.years
+model.revision()
+model.strats

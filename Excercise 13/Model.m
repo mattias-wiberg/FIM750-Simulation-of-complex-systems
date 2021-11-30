@@ -1,4 +1,4 @@
-classdef Game < handle
+classdef Model < handle
     %GAME All logic for the game
     %   Game is prisoners dilemma
     
@@ -9,12 +9,12 @@ classdef Game < handle
         P {mustBeNumeric}
         S {mustBeNumeric}
         L {mustBeNumeric}
-        world
+        strats
         years
     end
     
     methods
-        function obj = Game(N,T,R,P,S,L)
+        function obj = Model(N,T,R,P,S,L)
             %if nargin == 6
             obj.N = N;
             obj.T = T;
@@ -22,28 +22,47 @@ classdef Game < handle
             obj.P = P;
             obj.S = S;
             obj.L = L;
-            obj.world = zeros(L,L);
-            obj.years = zeros(size(obj.world));
+            obj.strats = zeros(L,L);
+            obj.years = zeros(size(obj.strats));
         end
         
-        function neighbors = von_neumann_neigbors(obj,x,y)
+        function neighbors = von_neumann_neigbors(obj,y,x)
             offsets = [
                 1 -1 0 0
                 0 0  1 -1];
-            neighbors = [x;y] + offsets;
+            neighbors = [y;x] + offsets;
             % Check if in bounds with periodic conditions
             neighbors(neighbors > obj.L) = 1;
             neighbors(neighbors < 1) = obj.L;
         end
-                
-        function competition(obj)
-            obj.years = zeros(size(obj.world));
-            for y = 1:size(obj.world, 1)
-                for x = 1:size(obj.world, 2)
-                    n = obj.world(x,y);
-                    neighbors = obj.von_neumann_neigbors(x,y);
+            
+        function revision(obj)
+            new_strats = obj.strats;
+            for y = 1:size(obj.strats, 1)
+                for x = 1:size(obj.strats, 2)
+                    min_years = obj.years(y, x);
+                    neighbors = obj.von_neumann_neigbors(y,x);
                     for neighbor = neighbors
-                        m = obj.world(neighbor(1), neighbor(2));
+                        nx = neighbor(1);
+                        ny = neighbor(2);
+                        if obj.years(ny, nx) < min_years
+                            min_years = obj.years(ny, nx);
+                            new_strats(y, x) = obj.strats(ny, nx);
+                        end
+                    end
+                end
+            end
+            obj.strats = new_strats;
+        end
+        
+        function competition(obj)
+            obj.years = zeros(size(obj.strats));
+            for y = 1:size(obj.strats, 1)
+                for x = 1:size(obj.strats, 2)
+                    n = obj.strats(y,x);
+                    neighbors = obj.von_neumann_neigbors(y,x);
+                    for neighbor = neighbors
+                        m = obj.strats(neighbor(1), neighbor(2));
                         year = obj.get_years(n,m); 
                         obj.years(y, x) = obj.years(y, x) + year;
                     end
@@ -52,12 +71,12 @@ classdef Game < handle
         end
         
         function populate(obj, range)
-            obj.world = range(randi(length(range),[obj.L, obj.L]));
+            obj.strats = range(randi(length(range),[obj.L, obj.L]));
         end
         
         function [A, B] = get_years(obj, n, m)
             %GET_YEARS gets the amount of years for each player A,B
-            %   Years from two different strategies n for player A and m
+            %   Years from two different strats n for player A and m
             %   for player B.
             A = min(m,n) * obj.R;
             B = A;

@@ -8,13 +8,13 @@ T = 0;
 R = 0.5;
 P = 1;
 S = 1.5;
-game = Game(N,T,R,P,S);
+model = Model(N,T,R,P,S);
 
 years = zeros(1, N);
 m = 6;
 for i = 1:N+1
     n = i - 1;
-    years(i) = game.get_years(n,m);
+    years(i) = model.get_years(n,m);
 end
 scatter(0:N, years, 'f')
 xlim([0 10])
@@ -31,12 +31,12 @@ T = 0;
 R = 0.5;
 P = 1;
 S = 1.5;
-game = Game(N,T,R,P,S);
+model = Model(N,T,R,P,S);
 
 M = zeros(N+1,N+1);
 for i = 1:size(M,1)
     for j = 1:size(M,2)
-        M(i,j) = game.get_years(i, j);
+        M(i,j) = model.get_years(i, j);
         fprintf("(%d, %d) ",i,j)
     end
     fprintf("\n")
@@ -64,11 +64,11 @@ for R = linspace(T+0.01,P-0.01,steps)
     for S = linspace(P+0.01,10,steps)
         fprintf("%d, %d\n",R,S)
         clf
-        game = Game(N,T,R,P,S);
+        model = Model(N,T,R,P,S);
         years = zeros(1, N);
         for k = 1:N+1
             n = k - 1;
-            years(k) = game.get_years(n,m);
+            years(k) = model.get_years(n,m);
         end
         [~,I] = min(years);
         nBest(i,j) = I-1;
