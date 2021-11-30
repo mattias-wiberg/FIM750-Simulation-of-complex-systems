@@ -36,13 +36,13 @@ When placing a single cooperator in a lattice of defectors it just alawys dissap
 ## D
 Using the same settings as in A but using a 3x3 cluster of cooperators in the middle while varying R we get the following plots.
 Inital
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_0_r_0.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_0_r_0.png?raw=true) \
 R = [0, 0.78] cooperators spread
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_29_r_0.78.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_29_r_0.78.png?raw=true) \
 R = [0.79, 0.85] cooperators form a rotated square and stay stable
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_20_r_0.79.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_20_r_0.79.png?raw=true) \
 R = [0.86, 0.92] cooperators form a small star and stay stable
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_2_r_0.86.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_2_r_0.86.png?raw=true) \
 R = [0.93, 1] cooperators vanish
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_4_r_0.93.png?raw=true)
 # Exercise 3
