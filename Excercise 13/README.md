@@ -1,6 +1,6 @@
 # Exercise 1
 ## A
-Fixing the opponent's strategy to m shows that the best strategy is n=m-1 this can be seen for the case of m=6 as shown below. Although for m = 0, n = m should be choosen.
+Fixing the opponent's strategy to m shows that the best strategy is n=m-1 this can be seen for the case of m=6 as shown below. Although for m = 0, n = m should be choosen.\
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/1/a.png?raw=true)
 ## B
 A 2D map of years in prison as a function of the player’s strategy n and the opponent’s strategy m can be seen below.
