@@ -61,7 +61,7 @@ nBest = [];
 i = 1;
 for R = linspace(T+0.01,P-0.01,steps)
     j = 1;
-    for S = linspace(P,10,steps)
+    for S = linspace(P+0.01,10,steps)
         fprintf("%d, %d\n",R,S)
         clf
         game = Game(N,T,R,P,S);
