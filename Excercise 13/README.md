@@ -6,7 +6,7 @@ Fixing the opponent's strategy to m shows that the best strategy is n=m-1 this c
 A 2D map of years in prison as a function of the player’s strategy n and the opponent’s strategy m can be seen below.
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/1/b.png?raw=true)
 ## C
-To check if R and S has any affect on the best strategy n=m-1 the same plot was generated as in Figure 1 and the value of n giving the lowest amount of years was recorded while varying R = (T,P) and S=(P, 10]. Having m = 6 and varying R and S gave the following gif.
+To check if R and S has any affect on the best strategy n=m-1 the same plot was generated as in Figure 1 and the value of n giving the lowest amount of years was recorded while varying R = (T,P) and S=(P, 10]. Having m = 6 and varying R and S gave the following gif.\
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/1/c.gif?raw=true)
 
 The test was done for all other m and the best strategry was always n=m-1.
@@ -26,7 +26,7 @@ R = [0.90, 0.92] defectors make up lines in each direction
 R = [0.93, 1] defectors take over
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_31_r_1.png?raw=true)
 ## B
-Using different number of defectors gives the following plots using the same settings as in A but with R = 0.9.\n
+Using different number of defectors gives the following plots using the same settings as in A but with R = 0.9.
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init2/t_20_r_0.9.png?raw=true)
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init3/t_17_r_0.9.png?raw=true)
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init4/t_14_r_0.9.png?raw=true)
