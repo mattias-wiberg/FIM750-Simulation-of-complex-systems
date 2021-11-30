@@ -14,26 +14,19 @@ model = Model(N,T,R,P,S,L,mu);
 model.populate(N);
 model.strats(15,15) = 0; 
 old_strats = [];
-clims = [0 N];
 
-imagesc(model.strats, clims)
-colorbar
-set(gca, 'YDir', 'Normal')
 t = 0;
+model.plot(t)
 
 while ~isequal(old_strats, model.strats)
     old_strats = model.strats;
     model.competition()
     model.revision()
-    %model.mutation()
     t = t + 1;
 end
 
-imagesc(model.strats, clims)
-set(gca, 'YDir', 'Normal')
-colorbar
-title(strcat("t = ", int2str(t), " R = ", num2str(R)))
-saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(R),'.png'))
+model.plot(t)
+model.save_plot(t)
 %% b
 clc
 clear
@@ -74,31 +67,19 @@ model.strats(init5) = 0;
 old_strats = [];
 clims = [0 N];
 
-imagesc(model.strats, clims)
-colorbar
-set(gca, 'YDir', 'Normal')
 t = 0;
-title(strcat("t = ", int2str(t), " R = ", num2str(R)))
-saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(R),'.png'))
-
+subplot(1,2,1)
+model.plot(t)
 while ~isequal(old_strats, model.strats)
     old_strats = model.strats;
     model.competition()
     model.revision()
-    imagesc(model.strats, clims)
-    set(gca, 'YDir', 'Normal')
-    colorbar
-    pause(0.1)
-    %model.mutation()
     t = t + 1;
 end
-
-imagesc(model.strats, clims)
-set(gca, 'YDir', 'Normal')
-colorbar
-title(strcat("t = ", int2str(t), " R = ", num2str(R)))
-saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(R),'.png'))
-%% c
+subplot(1,2,2)
+model.plot(t)
+model.save_plot(t)
+%% c/d
 clc
 clear
 
@@ -112,23 +93,27 @@ mu = 0;
 
 init = zeros(L)==1;
 init(15-1:15+1,15-1:15+1) = 1; 
-
-model = Model(N,T,R,P,S,L,mu);
-model.populate(0);
-model.strats(init) = N;
-old_strats = [];
-t = 0;
-model.plot(t)
-model.save_plot(t)
-
-while ~isequal(old_strats, model.strats)
-    old_strats = model.strats;
-    model.competition()
-    model.revision()
+%init(15,15) = 1;
+for R = 0.2
+    model = Model(N,T,R,P,S,L,mu);
+    model.populate(0);
+    model.strats(init) = N;
+    old_strats = [];
+    t = 0;
+    subplot(1,2,1)
     model.plot(t)
-    pause(0.01)
-    %model.mutation()
-    t = t + 1;
+
+    while ~isequal(old_strats, model.strats)
+        old_strats = model.strats;
+        model.competition()
+        model.revision()
+        %model.plot(t)
+        %pause(0.01)
+        %model.mutation()
+        t = t + 1;
+    end
+    subplot(1,2,2)
+    model.plot(t)
+    pause(0.02)
+    model.save_plot(t)
 end
-model.plot(t)
-model.save_plot(t)
