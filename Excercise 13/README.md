@@ -26,7 +26,15 @@ R = [0.90, 0.92] defectors make up lines in each direction
 R = [0.93, 1] defectors take over
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_31_r_1.png?raw=true)
 ## B
-Using different number of defectors gives the following plots using the same 
+Using different number of defectors gives the following plots using the same settings as in A but with R = 0.9.
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init2/t_0_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init2/t_20_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init3/t_0_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init3/t_17_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init4/t_0_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init4/t_14_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init5/t_0_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init5/t_17_r_0.9.png?raw=true)
 
 # Exercise 3
 
