@@ -9,12 +9,13 @@ classdef Model < handle
         P {mustBeNumeric}
         S {mustBeNumeric}
         L {mustBeNumeric}
+        mu
         strats
         years
     end
     
     methods
-        function obj = Model(N,T,R,P,S,L)
+        function obj = Model(N,T,R,P,S,L,mu)
             %if nargin == 6
             obj.N = N;
             obj.T = T;
@@ -22,6 +23,7 @@ classdef Model < handle
             obj.P = P;
             obj.S = S;
             obj.L = L;
+            obj.mu = mu;
             obj.strats = zeros(L,L);
             obj.years = zeros(size(obj.strats));
         end
@@ -53,6 +55,14 @@ classdef Model < handle
                 end
             end
             obj.strats = new_strats;
+        end
+        
+        function mutation(obj)
+            for i = 1:numel(obj.strats)
+                if rand < obj.mu
+                    obj.strats(i) = randi([0, obj.N]);
+                end
+            end
         end
         
         function competition(obj)

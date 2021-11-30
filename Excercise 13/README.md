@@ -20,7 +20,21 @@ The test was done for all other m and the best strategry was always n=m-1.
 # Exercise 2
 Now implementing a periodic lattice where players play the dilemma with their 
 von Neumann neighbors.
+## A
+Starting from a single defector (0) in the middle and cooperators (N)
+everywhere else we get the following plots using N = 7, T = 0, P = 1, 
+S = 1.5, L = 30, mu = 0.
 
+R = [0, 0.78] the defector dies out
+![alt text]()
+R = [0.79, 0.85] everything just stays as is
+![alt text]()
+R = [0.86, 0.89] defectors make up a plus sign then stops
+![alt text]()
+R = [0.90, 0.92] defectors make up lines in each direction
+![alt text]()
+R = [0.93, 1] defectors take over
+![alt text]()
 # Exercise 3
 
 # Exercise 4
