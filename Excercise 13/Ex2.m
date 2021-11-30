@@ -106,40 +106,29 @@ N = 7;
 T = 0;
 P = 1;
 S = 1.5;
-R = 0.1;
+R = 0.8;
 L = 30;
 mu = 0;
 
 init = zeros(L)==1;
-init(15,15) = 1; 
+init(15-1:15+1,15-1:15+1) = 1; 
 
 model = Model(N,T,R,P,S,L,mu);
 model.populate(0);
 model.strats(init) = N;
 old_strats = [];
-clims = [0 N];
-
-imagesc(model.strats, clims)
-colorbar
-set(gca, 'YDir', 'Normal')
 t = 0;
-title(strcat("t = ", int2str(t), " R = ", num2str(R)))
-saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(R),'.png'))
+model.plot(t)
+model.save_plot(t)
 
 while ~isequal(old_strats, model.strats)
     old_strats = model.strats;
     model.competition()
     model.revision()
-    imagesc(model.strats, clims)
-    set(gca, 'YDir', 'Normal')
-    colorbar
-    pause(0.1)
+    model.plot(t)
+    pause(0.01)
     %model.mutation()
     t = t + 1;
 end
-
-imagesc(model.strats, clims)
-set(gca, 'YDir', 'Normal')
-colorbar
-title(strcat("t = ", int2str(t), " R = ", num2str(R)))
-saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(R),'.png'))
+model.plot(t)
+model.save_plot(t)

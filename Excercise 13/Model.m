@@ -80,6 +80,18 @@ classdef Model < handle
             end
         end
         
+        function plot(obj, t)
+            clims = [0 obj.N];
+            imagesc(obj.strats, clims)
+            colorbar
+            set(gca, 'YDir', 'Normal')
+            title(strcat("t = ", int2str(t), " R = ", num2str(obj.R)))
+        end
+        
+        function save_plot(obj, t)
+            saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(obj.R),'.png'))        
+        end
+            
         function populate(obj, range)
             obj.strats = range(randi(length(range),[obj.L, obj.L]));
         end

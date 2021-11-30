@@ -35,6 +35,11 @@ Using different number of defectors gives the following plots using the same set
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init4/t_14_r_0.9.png?raw=true)
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init5/t_0_r_0.9.png?raw=true)
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/b/init5/t_17_r_0.9.png?raw=true)
+## C
+When placing a single cooperator in a lattice of defectors it just alawys dissapears no matter R. Same settings as in A.
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/c/t_0_r_0.01.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/c/t_2_r_0.1.png?raw=true)
+## D
 
 # Exercise 3
 
