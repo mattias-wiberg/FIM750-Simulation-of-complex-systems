@@ -43,15 +43,20 @@ classdef Model < handle
             for y = 1:size(obj.strats, 1)
                 for x = 1:size(obj.strats, 2)
                     min_years = obj.years(y, x);
+                    best_strats = [obj.strats(y, x)];
                     neighbors = obj.von_neumann_neigbors(y,x);
                     for neighbor = neighbors
                         ny = neighbor(1);
                         nx = neighbor(2);
-                        if obj.years(ny, nx) < min_years
-                            min_years = obj.years(ny, nx);
-                            new_strats(y, x) = obj.strats(ny, nx);
+                        neighbor_years = obj.years(ny, nx);
+                        if  neighbor_years < min_years
+                            min_years = neighbor_years;
+                            best_strats = [obj.strats(ny, nx)];
+                        elseif neighbor_years == min_years
+                            best_strats = [best_strats, obj.strats(ny, nx)];
                         end
                     end
+                    new_strats(y, x) = best_strats(randi(length(best_strats)));
                 end
             end
             obj.strats = new_strats;
@@ -72,11 +77,12 @@ classdef Model < handle
                 for x = 1:size(obj.strats, 2)
                     n = obj.strats(y,x);
                     neighbors = obj.von_neumann_neigbors(y,x);
+                    year_sum = 0;
                     for neighbor = neighbors
                         m = obj.strats(neighbor(1), neighbor(2));
-                        year = obj.get_years(n,m); 
-                        obj.years(y, x) = obj.years(y, x) + year;
+                        year_sum = year_sum + obj.get_years(n,m); 
                     end
+                    obj.years(y, x) = year_sum;
                 end
             end
         end
@@ -100,6 +106,13 @@ classdef Model < handle
             obj.strats = range(randi(length(range),[obj.L, obj.L]));
         end
         
+        function strat_amounts = get_strat_amounts(obj)
+            strat_amounts = zeros(obj.N+1, 1);
+            for i = 0:obj.N % index 1 = 0 strat
+                strat_amounts(i+1) = sum(obj.strats == i, 'all');
+            end
+        end
+        
         function strat_fractions = get_strat_fractions(obj)
             strat_fractions = zeros(obj.N+1, 1);
             for i = 0:obj.N % index 1 = 0 strat
@@ -107,26 +120,26 @@ classdef Model < handle
             end
         end
         
-        function [A, B] = get_years(obj, n, m)
+        function A = get_years(obj, n, m)
             %GET_YEARS gets the amount of years for each player A,B
             %   Years from two different strats n for player A and m
             %   for player B.
-            A = min(m,n) * obj.R;
-            B = A;
+            A = min(n,m) * obj.R;
+            %B = A;
             if n > m
                 A = A + obj.S;
-                B = B + obj.T;
+                %B = B + obj.T;
             elseif n < m 
                 A = A + obj.T;
-                B = B + obj.S;
+                %B = B + obj.S;
             else
                 A = A + obj.P;
-                B = B + obj.P;
+                %B = B + obj.P;
             end
-            roundsLeft = obj.N - (min(m,n) + 1);
+            roundsLeft = obj.N - (min(n,m) + 1);
                 
             A = A + roundsLeft * obj.P;
-            B = B + roundsLeft * obj.P;
+            %B = B + roundsLeft * obj.P;
         end
     end
 end

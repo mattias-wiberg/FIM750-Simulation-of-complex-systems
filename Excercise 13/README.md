@@ -68,7 +68,7 @@ R = [0.86, 0.88]
 R = [0.89, 1]
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_1.png?raw=true)
 ## E
-Having R = 0.84, P = 1, T = 0, N = 7
+Having R = 0.84, P = 1, T = 0, N = 7 \
 S = [0, 1.35] cooperators spread
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_1.35.png?raw=true) \
 S = [1.36, 1.61] cooperation coexists with defection
@@ -98,6 +98,7 @@ After R > 0.72 defection(0) usually spreads and takes over
 At low R < 0.16 you could say that cooperation(7) is the evolutionary stable strategies but at higher R > 0.72 defection(0) seems to be the only evolutionary stable strategy. In between R = [0.16, 0.71] no strategry seems to be evolutionary stable but at times defection(0) can take over as mentioned above.
 # Exercise 5
 ## A
+
 
 ## B
 
