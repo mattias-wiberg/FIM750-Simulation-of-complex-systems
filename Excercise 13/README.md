@@ -12,7 +12,7 @@ The test was done for all other m and the best strategry was always n=m-1.
 # Exercise 2
 Now implementing a periodic lattice where players play the dilemma with their von Neumann neighbors.
 ## A
-Starting from a single defector (0) in the middle and cooperators (N) everywhere else we get the following plots using N = 7, T = 0, P = 1, S = 1.5, L = 30, mu = 0.
+Starting from a single defector (0) in the middle and cooperators (N) everywhere else we get the following plots using N = 7, T = 0, P = 1, S = 1.5, L = 30, &mu = 0.
 
 R = [0, 0.78] the defector dies out
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_2_r_0.png?raw=true) \
@@ -98,10 +98,10 @@ After R > 0.72 defection(0) usually spreads and takes over
 At low R < 0.16 you could say that cooperation(7) is the evolutionary stable strategies but at higher R > 0.72 defection(0) seems to be the only evolutionary stable strategy. In between R = [0.16, 0.71] no strategry seems to be evolutionary stable but at times defection(0) can take over as mentioned above.
 # Exercise 5
 ## A 
-Figure below shows the different variances of each strategy ($\sigma_n^2$) varying R and S while keeping T = 0, P = 1, $\mu$ = 0.01 \
+Figure below shows the different variances of each strategy (&sigma<sub>n</sub><sup>2</sup>) varying R and S while keeping T = 0, P = 1, &mu = 0.01 \
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars.png?raw=true) \
 ## B
-Figure below shows the binary map of the sum of variances for each strategy ($\Sigma\sigma_n^2$) that is greated than the threshold, varying R and S while keeping T = 0, P = 1, $\mu$ = 0.01 \
+Figure below shows the binary map of the sum of variances for each strategy (&Sigma&sigma<sub>n</sub><sup>2</sup>) that is greated than the threshold, varying R and S while keeping T = 0, P = 1, &mu = 0.01
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars_bin_500.png?raw=true) \
 At threshold 1000 \
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars_bin_1000.png?raw=true)
