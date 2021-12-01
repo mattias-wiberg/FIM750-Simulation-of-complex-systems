@@ -15,13 +15,13 @@ Now implementing a periodic lattice where players play the dilemma with their vo
 Starting from a single defector (0) in the middle and cooperators (N) everywhere else we get the following plots using N = 7, T = 0, P = 1, S = 1.5, L = 30, mu = 0.
 
 R = [0, 0.78] the defector dies out
-![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_2_r_0.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_2_r_0.png?raw=true) \
 R = [0.79, 0.85] everything just stays as is
-![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_1_r_0.79.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_1_r_0.79.png?raw=true) \
 R = [0.86, 0.89] defectors make up a plus sign then stops
-![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_2_r_0.86.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_2_r_0.86.png?raw=true) \
 R = [0.90, 0.92] defectors make up lines in each direction
-![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_17_r_0.9.png?raw=true)
+![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_17_r_0.9.png?raw=true) \
 R = [0.93, 1] defectors take over
 ![alt text](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/a/t_31_r_1.png?raw=true)
 ## B
@@ -58,25 +58,25 @@ R = 0.86
 ## D
 Having S = 1.5, P = 1, T = 0, N = 7
 R = [0, 78]
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.78.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.78.png?raw=true) \
 R = [0.79, 0.83]
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.83.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.83.png?raw=true) \
 R = [0.84, 0.85]
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.84.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.84.png?raw=true) \
 R = [0.86, 0.88]
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.88.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_0.88.png?raw=true) \
 R = [0.89, 1]
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/d/t_100_r_1.png?raw=true)
 ## E
 Having R = 0.84, P = 1, T = 0, N = 7
 S = [0, 1.35] cooperators spread
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_1.35.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_1.35.png?raw=true) \
 S = [1.36, 1.61] cooperation coexists with defection
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_1.61.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_1.61.png?raw=true) \
 S = [1.62, 2.35] defection takes over but still coexists with cooperation
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_2.35.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_2.35.png?raw=true) \
 S = 2.36 defection takes over even more but some cooperation still remains
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_2.36.png?raw=true)
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_2.36.png?raw=true) \
 S = [2.37, 5] defection takes over
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_5.png?raw=true)
 # Exercise 4
