@@ -98,10 +98,10 @@ After R > 0.72 defection(0) usually spreads and takes over
 At low R < 0.16 you could say that cooperation(7) is the evolutionary stable strategies but at higher R > 0.72 defection(0) seems to be the only evolutionary stable strategy. In between R = [0.16, 0.71] no strategry seems to be evolutionary stable but at times defection(0) can take over as mentioned above.
 # Exercise 5
 ## A 
-Figure below shows the different variances of each strategy (\sigma_n^2) varying R and S while keeping T = 0, P = 1, \mu = 0.01 \
+Figure below shows the different variances of each strategy ($\sigma_n^2$) varying R and S while keeping T = 0, P = 1, $\mu$ = 0.01 \
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars.png?raw=true) \
 ## B
-Figure below shows the binary map of the sum of variances for each strategy (\Sigma\sigma_n^2) that is greated than the threshold, varying R and S while keeping T = 0, P = 1, \mu = 0.01
+Figure below shows the binary map of the sum of variances for each strategy ($\Sigma\sigma_n^2$) that is greated than the threshold, varying R and S while keeping T = 0, P = 1, $\mu$ = 0.01 \
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars_bin_500.png?raw=true) \
 At threshold 1000 \
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/5/strats_vars_bin_1000.png?raw=true)
