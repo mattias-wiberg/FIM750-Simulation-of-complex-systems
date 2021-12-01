@@ -41,7 +41,7 @@ classdef Model < handle
         function revision(obj)
             new_strats = obj.strats;
             for y = 1:size(obj.strats, 1)
-                for x = 1:size(obj.strats, 2)
+               for x = 1:size(obj.strats, 2)
                     min_years = obj.years(y, x);
                     best_strats = [obj.strats(y, x)];
                     neighbors = obj.von_neumann_neigbors(y,x);
@@ -124,7 +124,8 @@ classdef Model < handle
             %GET_YEARS gets the amount of years for each player A,B
             %   Years from two different strats n for player A and m
             %   for player B.
-            A = min(n,m) * obj.R;
+            mini = min(n,m);
+            A = mini * obj.R;
             %B = A;
             if n > m
                 A = A + obj.S;
@@ -136,7 +137,7 @@ classdef Model < handle
                 A = A + obj.P;
                 %B = B + obj.P;
             end
-            roundsLeft = obj.N - (min(n,m) + 1);
+            roundsLeft = obj.N - (mini + 1);
                 
             A = A + roundsLeft * obj.P;
             %B = B + roundsLeft * obj.P;
