@@ -81,22 +81,21 @@ S = [2.37, 5] defection takes over
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_5.png?raw=true)
 # Exercise 4
 It is clear that in the beginning R = [0, 0.16] the dominant strategy is cooperation specifically for 7.
-![]() \ 
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.16_s_1.5.png?raw=true) \ 
 When R increases even further R > 0.16 the cooperation for 6 rounds joins the dominance
-![]() \ 
-and when R is increased even further R > 0.2 the cooperation for 5 rounds joins the dominance
-![]() \ 
-and so on for R < 0.7.
-![]() \ 
-![]() \ 
-![]() \ 
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.21_s_1.5.png?raw=true) \ 
+and when R is increased even further R = [0.2, 0.46] the cooperation for 5 rounds joins the dominance.
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.36_s_1.5.png?raw=true) \ 
+For R = [0.47, 0.71] strategies 3,4 and 2 slowly join the dominance.
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.51_s_1.5.png?raw=true) \ 
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.56_s_1.5.png?raw=true) \ 
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.61_s_1.5.png?raw=true) \ 
 At R = 0.71 all different strategies are dominant but at different times and leads to oscillation of the different distributions. On the 2D plot it shows that different regions are formed. Although at times defection takes over.
-![]() \ 
-![]() \ 
-![]() \ 
-![]() \ 
-![]() \ 
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.71_s_1.5.png?raw=true) \ 
+After R > 0.72 defection(0) usually spreads and takes over
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.81_s_1.5.png?raw=true) \ 
 
+At low R < 0.16 you could say that cooperation(7) is the evolutionary stable strategies but at higher R > 0.72 defection(0) seems to be the only evolutionary stable strategy. In between R = [0.16, 0.71] no strategry seems to be evolutionary stable but at times defection(0) can take over as mentioned above.
 # Exercise 5
 ## A
 
