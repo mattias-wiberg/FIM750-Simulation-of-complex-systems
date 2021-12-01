@@ -46,7 +46,27 @@ R = [0.86, 0.92] cooperators form a small star and stay stable
 R = [0.93, 1] cooperators vanish
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/2/d/t_4_r_0.93.png?raw=true)
 # Exercise 3
-
+## A
+R = 0.82
+![]()
+## B
+R = 0.84
+![]()
+## C
+R = 0.86
+![]()
+## D
+Having S = 1.5
+R = [0, 78]
+![]()
+R = [0.79, 0.83]
+![]()
+R = [0.84, 0.85]
+![]()
+R = [0.86, 0.88]
+![]()
+R = [0.89, 1]
+![]()
 # Exercise 4
 
 # Exercise 5

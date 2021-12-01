@@ -86,6 +86,7 @@ classdef Model < handle
             %heatmap(obj.strats)
             imagesc(obj.strats, clims)
             colorbar
+            pbaspect([1 1 1])
             set(gca, 'YDir', 'Normal')
             title(strcat("t = ", int2str(t), " R = ", num2str(obj.R)))
         end
