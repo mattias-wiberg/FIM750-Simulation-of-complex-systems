@@ -9,7 +9,7 @@ P = 1;
 S = 1.5;
 L = 30;
 mu = 0.01;
-R = 0.858;
+R = 0.86;
 
 model = Model(N,T,R,P,S,L,mu);
 model.populate([0, N]);
@@ -25,8 +25,8 @@ while ~isequal(old_strats, model.strats)
     model.revision()
     model.mutation([0, N])
     subplot(1,2,2)
-    model.plot(t)
-    pause(0.01)
+    %model.plot(t)
+    %pause(0.01)
     if t == 100
         break
     end

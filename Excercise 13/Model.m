@@ -45,8 +45,8 @@ classdef Model < handle
                     min_years = obj.years(y, x);
                     neighbors = obj.von_neumann_neigbors(y,x);
                     for neighbor = neighbors
-                        nx = neighbor(1);
-                        ny = neighbor(2);
+                        ny = neighbor(1);
+                        nx = neighbor(2);
                         if obj.years(ny, nx) < min_years
                             min_years = obj.years(ny, nx);
                             new_strats(y, x) = obj.strats(ny, nx);
@@ -83,6 +83,7 @@ classdef Model < handle
         
         function plot(obj, t)
             clims = [0 obj.N];
+            %heatmap(obj.strats)
             imagesc(obj.strats, clims)
             colorbar
             set(gca, 'YDir', 'Normal')
