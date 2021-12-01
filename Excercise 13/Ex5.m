@@ -14,9 +14,9 @@ range = [0:1:N];
 t_min = 100;
 t_record = 500;
 t_max = t_min + t_record;
-steps = 100;
-S = 1.5%linspace(1.01,3,steps);
-R = 0.01%linspace(0.01,0.99,steps);
+steps = 4;
+S = linspace(1.01,3,steps);
+R = linspace(0.01,0.99,steps);
 strats_vars = zeros(steps,steps,length(range));
 for i = 1:length(R)
     parfor j = 1:length(S)
@@ -42,3 +42,18 @@ end
 toc
 % B
 phase_plot = sum(strats_vars, 3)
+%% Plotting
+%heatmap(obj.strats)
+clf
+for n = 1:N+1
+    subplot(2,4,n)
+    imagesc([1.01,3],[0.01,1],strats_vars(:,:,n))
+    colorbar
+    colormap jet
+    pbaspect([1 1 1])
+    set(gca, 'YDir', 'Normal')
+    xlabel('S')
+    ylabel('R')
+    title(strcat("\sigma_",int2str(n),"^2"))
+    %title("\Sigma\sigma_n^2 > 1000")
+end
