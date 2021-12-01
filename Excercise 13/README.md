@@ -80,5 +80,25 @@ S = 2.36 defection takes over even more but some cooperation still remains
 S = [2.37, 5] defection takes over
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/3/e/t_100_r_0.84_s_5.png?raw=true)
 # Exercise 4
+It is clear that in the beginning R = [0, 0.16] the dominant strategy is cooperation specifically for 7.
+![]() \ 
+When R increases even further R > 0.16 the cooperation for 6 rounds joins the dominance
+![]() \ 
+and when R is increased even further R > 0.2 the cooperation for 5 rounds joins the dominance
+![]() \ 
+and so on for R < 0.7.
+![]() \ 
+![]() \ 
+![]() \ 
+At R = 0.71 all different strategies are dominant but at different times and leads to oscillation of the different distributions. On the 2D plot it shows that different regions are formed. Although at times defection takes over.
+![]() \ 
+![]() \ 
+![]() \ 
+![]() \ 
+![]() \ 
 
 # Exercise 5
+## A
+
+## B
+

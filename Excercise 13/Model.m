@@ -86,6 +86,7 @@ classdef Model < handle
             %heatmap(obj.strats)
             imagesc(obj.strats, clims)
             colorbar
+            colormap jet
             pbaspect([1 1 1])
             set(gca, 'YDir', 'Normal')
             title(strcat("t = ", int2str(t), " R = ", num2str(obj.R), " S = ", num2str(obj.S)))
@@ -97,6 +98,13 @@ classdef Model < handle
             
         function populate(obj, range)
             obj.strats = range(randi(length(range),[obj.L, obj.L]));
+        end
+        
+        function strat_fractions = get_strat_fractions(obj)
+            strat_fractions = zeros(obj.N+1, 1);
+            for i = 0:obj.N % index 1 = 0 strat
+                strat_fractions(i+1) = sum(obj.strats == i, 'all')/(obj.L*obj.L);
+            end
         end
         
         function [A, B] = get_years(obj, n, m)
