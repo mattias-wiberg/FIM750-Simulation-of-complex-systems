@@ -56,7 +56,7 @@ R = 0.84
 R = 0.86
 ![]()
 ## D
-Having S = 1.5
+Having S = 1.5, P = 1, T = 0, N = 7
 R = [0, 78]
 ![]()
 R = [0.79, 0.83]
@@ -66,6 +66,18 @@ R = [0.84, 0.85]
 R = [0.86, 0.88]
 ![]()
 R = [0.89, 1]
+![]()
+## E
+Having R = 0.84, P = 1, T = 0, N = 7
+S = [0, 1.35] cooperators spread
+![]()
+S = [1.36, 1.61] cooperation coexists with defection
+![]()
+S = [1.62, 2.35] defection takes over but still coexists with cooperation
+![]()
+S = 2.36 defection takes over even more but some cooperation still remains
+![]()
+S = [2.37, 5] defection takes over
 ![]()
 # Exercise 4
 

@@ -88,11 +88,11 @@ classdef Model < handle
             colorbar
             pbaspect([1 1 1])
             set(gca, 'YDir', 'Normal')
-            title(strcat("t = ", int2str(t), " R = ", num2str(obj.R)))
+            title(strcat("t = ", int2str(t), " R = ", num2str(obj.R), " S = ", num2str(obj.S)))
         end
         
         function save_plot(obj, t)
-            saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(obj.R),'.png'))        
+            saveas(gcf, strcat("t_", int2str(t), "_r_", num2str(obj.R),"_s_", num2str(obj.S),'.png'))        
         end
             
         function populate(obj, range)
