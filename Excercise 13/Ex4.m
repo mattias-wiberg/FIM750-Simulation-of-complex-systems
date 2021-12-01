@@ -10,7 +10,7 @@ L = 30;
 mu = 0.01;
 % T < R < P < S
 
-for R = 0.72
+for R = 0.55
 model = Model(N,T,R,P,S,L,mu);
 model.populate([0:1:N]);
 old_strats = [];
@@ -26,11 +26,11 @@ while ~isequal(old_strats, model.strats)
     %subplot(1,2,2)
     %model.plot(t)
     %pause(0.01)
-    if t == 100
+    if t == 600
         break
     end
     t = t + 1;
-    strat_amounts(:,t) = model.get_strat_fractions();
+    strat_amounts(:,t) = model.get_strat_amounts();
 end
 
 clf
@@ -40,8 +40,11 @@ subplot(1,2,2)
 hold on
 colors = jet(N+1);
 for i = 1:N+1
-    plot(1:1:100, strat_amounts(i,:), 'color', colors(i,:))
+    plot(1:1:600, strat_amounts(i,:), 'color', colors(i,:))
 end
+mean(strat_amounts(8,100:end))
+std(strat_amounts(8,100:end))
+var(strat_amounts(8,100:end))
 pbaspect([1 1 1])
 %legend("0","1","2","3","4","5","6","7")
 ylabel("Population fraction")

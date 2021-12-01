@@ -63,7 +63,7 @@ init5(4*6,6) = 1;
 
 model = Model(N,T,R,P,S,L,mu);
 model.populate(N);
-model.strats(init3) = 0;
+model.strats(init5) = 0;
 old_strats = [];
 clims = [0 N];
 
