@@ -93,7 +93,7 @@ For R = [0.47, 0.71] strategies 3,4 and 2 slowly join the dominance.
 At R = 0.71 all different strategies are dominant but at different times and leads to oscillation of the different distributions. On the 2D plot it shows that different regions are formed. Although at times defection takes over.
 ![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.71_s_1.5.png?raw=true) \
 After R > 0.72 defection(0) usually spreads and takes over
-![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.81_s_1.5.png?raw=true) \
+![](https://github.com/mattias-wiberg/FIM750-Simulation-of-complex-systems/blob/main/Excercise%2013/4/t_100_r_0.81_s_1.5.png?raw=true)
 
 At low R < 0.16 you could say that cooperation(7) is the evolutionary stable strategies but at higher R > 0.72 defection(0) seems to be the only evolutionary stable strategy. In between R = [0.16, 0.71] no strategry seems to be evolutionary stable but at times defection(0) can take over as mentioned above.
 # Exercise 5
