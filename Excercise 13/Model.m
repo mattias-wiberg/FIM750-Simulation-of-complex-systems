@@ -57,10 +57,11 @@ classdef Model < handle
             obj.strats = new_strats;
         end
         
-        function mutation(obj)
+        function mutation(obj, range)
             for i = 1:numel(obj.strats)
                 if rand < obj.mu
-                    obj.strats(i) = randi([0, obj.N]);
+                    choices = range(range~=obj.strats(i));
+                    obj.strats(i) = choices(randi(length(choices)));
                 end
             end
         end
